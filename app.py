@@ -318,6 +318,50 @@ with tab1:
 # ---------------------------------------------------------------- TAB 2
 with tab2:
     st.subheader("Five models, one honest scorecard")
+
+    with st.expander("📖 How to read this scorecard (plain English)", expanded=False):
+        n_test = 1500
+        base = float(train_df["attrition_90d"].mean())
+        leavers = int(round(n_test * base))
+        flagged = int(n_test * 0.10)
+        best_p = float(metrics["Precision@10%"].max())
+        best_r = float(metrics["Recall@10%"].max())
+        caught = int(round(flagged * best_p))
+        random_catch = int(round(flagged * base))
+        st.markdown(f"""
+The model was tested on **{n_test:,} agents it had never seen**. About **{leavers} of them
+({base:.0%}) really left** within 90 days. Every number below answers one question:
+*how well did the model find those {leavers} people?*
+
+**Why accuracy isn't shown:** a model that just says "nobody will leave" is
+{1-base:.0%} accurate — and completely useless. So we use better questions instead:
+
+🎯 **Precision@10%** — *"Were the conversations worth it?"*
+Suppose supervisors only have time to talk to the **{flagged} riskiest agents** (top 10%).
+Of those {flagged} flagged, **~{caught} really left ({best_p:.0%})**. Picking {flagged}
+agents at random would have caught only ~{random_catch}. That's a
+**{best_p/base:.1f}× better hit rate** — every conversation is ~{best_p/base:.0f}× more
+likely to be with a genuine flight risk.
+
+🕸️ **Recall@10%** — *"How many did we miss?"*
+Those same {flagged} conversations reached **{best_r:.0%} of everyone who was going to
+leave**. The rest scored below the cutoff and slipped through. Flag more people to catch
+more — at the cost of more wasted conversations. It's a dial, not a grade.
+
+📊 **ROC-AUC** — *"Does it rank people correctly?"*
+Pick one random leaver and one random stayer: ROC-AUC is the chance the model scored the
+leaver higher. Coin flip = 0.50, perfect = 1.00. Healthy attrition models live between
+**0.75 and 0.88**. (Above 0.95 usually means the model cheated — see the note below the chart.)
+
+📉 **PR-AUC** — same idea as ROC-AUC, but graded on a harder curve built for rare events.
+Its "coin flip" baseline is the base rate ({base:.2f}), so {metrics['PR-AUC'].max():.2f}
+means ~{metrics['PR-AUC'].max()/base:.0f}× better than guessing.
+
+**Bottom line for the business:** with no model, retention conversations are guesswork.
+With this one, the top-10% list is **{best_p/base:.1f}× denser in real flight risks** and
+catches **{best_r:.0%} of upcoming exits** — before the resignation letter arrives.
+""")
+
     st.dataframe(metrics.style.format({"ROC-AUC": "{:.3f}", "PR-AUC": "{:.3f}",
                                        "Precision@10%": "{:.1%}", "Recall@10%": "{:.1%}"})
                  .background_gradient(subset=["ROC-AUC"], cmap="BuGn"),
