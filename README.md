@@ -17,6 +17,21 @@ Most attrition models use HR snapshots (age, salary, tenure) and flag the wrong 
 | 🚨 **Risk Register** | Every agent given an **Attrition Score (0–100)** and tier (Critical / Elevated / Watch / Baseline), headline driver per agent, CSV export |
 | 🔍 **Agent Story** | Pick any agent → risk gauge, plain-English narrative of *why* they're flagged (native XGBoost SHAP contributions), the recommended retention action for their tier, and a **downloadable one-pager PDF** for the supervisor |
 
+
+## 🏢 Train on YOUR company data (v2)
+
+Flip the sidebar to **"Train on my company data"** and upload three simple exports any WFM team already has:
+
+| File | Grain | Source |
+|---|---|---|
+| **Daily activity log** | agent × day: adherence, minutes late, early departure, AHT, ACW, occupancy, break overrun, absence type | WFM tool + ACD |
+| **Agent master** | one row per agent: DOJ, hiring source, shift, queue, education, commute, supervisor | HR master |
+| **Exit log** | one row per leaver: resignation date, exit type | HR exit records |
+
+The app then does the hard part **inside**: engineers 20+ trend features (30-day vs 90-day personal baselines), builds monthly snapshots with a leakage-safe label (features look backward, label looks forward — notice-period behaviour can never contaminate training), trains the five models with **temporal validation** (tested on months it never saw), and scores your **current employees** — the latest snapshot, which is exactly the population without labels yet.
+
+No feature engineering, no data science required from the user: three boring exports in, a tiered risk register with stories out. Sample raw data is bundled (`data/raw/`, 250 agents × 15 months) — toggle it on to see the mode work instantly. Templates for all three files are downloadable in the sidebar.
+
 ## 🧠 The three-layer feature framework
 
 1. **Static profile** — tenure (non-linear risk bands), commute, hiring source, compa-ratio, IJP rejections

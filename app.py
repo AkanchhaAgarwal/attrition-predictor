@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 import reports
+from feature_engine import build_snapshots, validate, REQ_DAILY, REQ_MASTER, REQ_EXIT
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -56,13 +57,22 @@ def encode(X):
     return pd.get_dummies(X, columns=CAT_COLS, drop_first=True)
 
 @st.cache_resource
-def train_all_models(df):
-    """Train 5 models; return metrics, ROC data, and the fitted scorer
-    (XGBoost — chosen for its native per-agent SHAP contributions)."""
+def train_all_models(df, temporal=False):
+    """Train 5 models; return metrics, ROC data, fitted XGBoost scorer,
+    feature columns, and test-set info.
+    temporal=True -> hold out the most recent snapshots (company mode);
+    temporal=False -> stratified random split (demo mode)."""
+    drop = [c for c in ["agent_id", "attrition_90d", "snapshot_date"] if c in df.columns]
     y = df["attrition_90d"]
-    X = encode(df.drop(columns=["agent_id", "attrition_90d"]))
-    X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25,
-                                              stratify=y, random_state=42)
+    X = encode(df.drop(columns=drop))
+    if temporal and "snapshot_date" in df.columns:
+        cut = sorted(df["snapshot_date"].unique())[-2]
+        tr_mask = df["snapshot_date"] < cut
+        X_tr, X_te = X[tr_mask.values], X[~tr_mask.values]
+        y_tr, y_te = y[tr_mask.values], y[~tr_mask.values]
+    else:
+        X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25,
+                                                  stratify=y, random_state=42)
     pos_w = (y_tr == 0).sum() / (y_tr == 1).sum()
 
     # Logistic regression gets scaled features via a small wrapper
@@ -105,12 +115,15 @@ def train_all_models(df):
     # Scorer for the register/story: XGBoost retrained on ALL data
     scorer = XGBClassifier(**fitted["XGBoost"].get_params())
     scorer.fit(X, y)
-    return metrics, roc_data, scorer, list(X.columns)
+    test_info = {"n_test": len(y_te), "base": float(y_te.mean()),
+                 "split": "temporal (latest snapshots held out)" if temporal
+                          else "random stratified 75/25"}
+    return metrics, roc_data, scorer, list(X.columns), test_info
 
 @st.cache_data
 def score_population(df, _scorer, feat_cols):
     """Score everyone, assign tiers + 0-100 score, compute SHAP contributions."""
-    drop = [c for c in ["agent_id", "attrition_90d"] if c in df.columns]
+    drop = [c for c in ["agent_id", "attrition_90d", "snapshot_date"] if c in df.columns]
     X = encode(df.drop(columns=drop))
     X = X.reindex(columns=feat_cols, fill_value=0)
     proba = _scorer.predict_proba(X)[:, 1]
@@ -144,6 +157,7 @@ STORY = {
     "fri_mon_absence_ratio": lambda v: f"{v:.0%} of absences falling on Fridays/Mondays",
     "ncns_90d":              lambda v: f"{int(v)} no-call-no-show event(s) in 90 days",
     "pto_burn_rate":         lambda v: f"burning PTO at {v:.1f}× the accrual rate",
+    "pto_days_30d":          lambda v: f"{int(v)} planned leave day(s) taken in the last 30 days",
     "pto_rejections_180d":   lambda v: f"{int(v)} PTO request(s) denied in the last 6 months",
     "shift_swap_requests_30d":lambda v: f"{int(v)} shift-swap requests in 30 days",
     "aht_delta_pct":         lambda v: f"AHT drifting {v:+.1f}% vs their own baseline",
@@ -226,47 +240,111 @@ st.markdown('<p class="sub-title">Contact Centre Early-Warning System · WFM Sim
             unsafe_allow_html=True)
 
 with st.sidebar:
-    st.header("⚙️ Data")
-    up = st.file_uploader("Upload a roster CSV to score", type="csv")
-    st.caption("Upload with the `attrition_90d` column to retrain on your history, or "
-               "WITHOUT it to simply score your roster with the pre-trained model. "
-               "No upload? The app runs on a bundled synthetic dataset of 6,000 agents.")
+    st.header("⚙️ Data source")
+    mode = st.radio("Mode", ["🎮 Demo (bundled data)", "🏢 Train on my company data"],
+                    label_visibility="collapsed")
 
-    st.subheader("📥 Sample roster downloads")
-    _base = load_data(None)
-    st.download_button("Sample roster — 25 agents (with outcomes)",
-                       _base.sample(25, random_state=7).to_csv(index=False).encode(),
-                       "sample_roster_with_outcomes.csv", "text/csv",
-                       help="Shows the full schema incl. the attrition_90d target — "
-                            "use as a reference for retraining uploads.")
-    st.download_button("Blank scoring template (headers only)",
-                       _base.drop(columns=["attrition_90d"]).head(0)
-                            .to_csv(index=False).encode(),
-                       "roster_scoring_template.csv", "text/csv",
-                       help="Fill this with your agents (no outcome column needed) "
-                            "and upload to score them.")
+    up = daily_up = master_up = exit_up = None
+    use_sample_raw = False
+    if mode.startswith("🎮"):
+        up = st.file_uploader("Upload a roster CSV to score", type="csv")
+        st.caption("Upload with the `attrition_90d` column to retrain, or without it "
+                   "to score your roster. No upload? Runs on 6,000 synthetic agents.")
+        st.subheader("📥 Sample roster downloads")
+        _base = load_data(None)
+        st.download_button("Sample roster — 25 agents (with outcomes)",
+                           _base.sample(25, random_state=7).to_csv(index=False).encode(),
+                           "sample_roster_with_outcomes.csv", "text/csv")
+        st.download_button("Blank scoring template (headers only)",
+                           _base.drop(columns=["attrition_90d"]).head(0)
+                                .to_csv(index=False).encode(),
+                           "roster_scoring_template.csv", "text/csv")
+    else:
+        st.markdown("Upload **three simple exports** — the app engineers all features, "
+                    "trains on your history, and scores your current employees:")
+        daily_up = st.file_uploader("1️⃣ Daily activity log", type="csv",
+            help="One row per agent per day: " + ", ".join(REQ_DAILY))
+        master_up = st.file_uploader("2️⃣ Agent master", type="csv",
+            help="One row per agent: " + ", ".join(REQ_MASTER))
+        exit_up = st.file_uploader("3️⃣ Exit log", type="csv",
+            help="One row per leaver: " + ", ".join(REQ_EXIT))
+        use_sample_raw = st.toggle("Or try it with bundled sample company data",
+                                   value=not (daily_up and master_up and exit_up))
+        st.subheader("📥 File templates")
+        for label, cols, fname in [
+                ("Daily activity template", REQ_DAILY + ["swap_request"], "daily_activity_template.csv"),
+                ("Agent master template", REQ_MASTER + ["last_increment_date", "compa_ratio"], "agent_master_template.csv"),
+                ("Exit log template", REQ_EXIT, "exit_log_template.csv")]:
+            st.download_button(label, (",".join(cols) + "\n").encode(), fname, "text/csv")
+
     st.divider()
     st.markdown("**How it works**\n\n"
-                "1. Five ML models are trained on 30-vs-90-day behavioural trends\n"
-                "2. XGBoost assigns every agent an Attrition Score (0–100)\n"
-                "3. Agents are tiered: Critical / Elevated / Watch / Baseline\n"
+                "1. Features = 30-day behaviour vs each agent's own 90-day baseline\n"
+                "2. Label = voluntary exit within 90 days (leakage-safe by design)\n"
+                "3. Five ML models compete; XGBoost scores everyone 0–100\n"
                 "4. Every flag comes with a plain-English story")
     st.divider()
     st.markdown("Built by **Akanchha Agarwal**  \n"
                 "[WFM Simplified](https://youtube.com/@wfmsimplified) · "
                 "White paper in `docs/`")
 
-# --- data flow: train on labelled data; score whatever the user brought ---
-base_df = load_data(None)
-up_df = load_data(up) if up is not None else None
-train_df = up_df if (up_df is not None and "attrition_90d" in up_df.columns) else base_df
-score_df = up_df if up_df is not None else base_df
+# --- data flow ---
+if mode.startswith("🎮"):
+    base_df = load_data(None)
+    up_df = load_data(up) if up is not None else None
+    train_df = up_df if (up_df is not None and "attrition_90d" in up_df.columns) else base_df
+    score_df = up_df if up_df is not None else base_df
+    metrics, roc_data, scorer, feat_cols, test_info = train_all_models(train_df)
+    scored, contribs, cutoffs = score_population(score_df, scorer, feat_cols)
+    if up_df is not None and "attrition_90d" not in up_df.columns:
+        st.info("Scoring your uploaded roster with the model trained on the bundled "
+                "labelled dataset (no outcome column detected).", icon="📤")
+else:
+    @st.cache_data
+    def load_raw(d, m, e):
+        if d is not None and m is not None and e is not None:
+            return pd.read_csv(d), pd.read_csv(m), pd.read_csv(e)
+        return (pd.read_csv("data/raw/daily_activity.csv"),
+                pd.read_csv("data/raw/agent_master.csv"),
+                pd.read_csv("data/raw/exit_log.csv"))
 
-metrics, roc_data, scorer, feat_cols = train_all_models(train_df)
-scored, contribs, cutoffs = score_population(score_df, scorer, feat_cols)
-if up_df is not None and "attrition_90d" not in up_df.columns:
-    st.info("Scoring your uploaded roster with the model trained on the bundled "
-            "labelled dataset (no outcome column detected).", icon="📤")
+    have_uploads = daily_up is not None and master_up is not None and exit_up is not None
+    if not have_uploads and not use_sample_raw:
+        st.info("Upload all three files in the sidebar — or flip on the sample-data "
+                "toggle to see this mode in action.", icon="🏢")
+        st.stop()
+
+    daily_df, master_df, exit_df = load_raw(daily_up if have_uploads else None,
+                                            master_up if have_uploads else None,
+                                            exit_up if have_uploads else None)
+    problems = validate(daily_df, master_df, exit_df)
+    if problems:
+        for p in problems:
+            st.error(p, icon="🚫")
+        st.stop()
+
+    @st.cache_data
+    def engineer(daily_df, master_df, exit_df):
+        return build_snapshots(daily_df, master_df, exit_df)
+
+    with st.spinner("Engineering features from your raw files…"):
+        labelled, predict_df, eng_info = engineer(daily_df, master_df, exit_df)
+
+    if len(labelled) < 200 or labelled["attrition_90d"].sum() < 20:
+        st.error("Not enough labelled history to train reliably — need roughly 200+ "
+                 "agent-month rows and 20+ voluntary exits. Add more months of data.",
+                 icon="📉")
+        st.stop()
+
+    train_df = labelled
+    metrics, roc_data, scorer, feat_cols, test_info = train_all_models(labelled, temporal=True)
+    scored, contribs, cutoffs = score_population(predict_df, scorer, feat_cols)
+    st.success(f"**Trained on your data:** {eng_info['labelled_rows']:,} agent-month "
+               f"snapshots ({eng_info['train_span']}, "
+               f"{eng_info['attrition_rate']:.1%} attrition) — now scoring your "
+               f"**{eng_info['predict_rows']} current employees** as of "
+               f"{eng_info['predict_date']:%b %Y}. Validation is temporal: the model "
+               f"was tested on months it had never seen.", icon="🏢")
 
 tab1, tab2, tab3, tab4 = st.tabs(
     ["📊 Overview", "🤖 Model Lab", "🚨 Risk Register", "🔍 Agent Story"])
@@ -320,8 +398,8 @@ with tab2:
     st.subheader("Five models, one honest scorecard")
 
     with st.expander("📖 How to read this scorecard (plain English)", expanded=False):
-        n_test = 1500
-        base = float(train_df["attrition_90d"].mean())
+        n_test = test_info["n_test"]
+        base = test_info["base"]
         leavers = int(round(n_test * base))
         flagged = int(n_test * 0.10)
         best_p = float(metrics["Precision@10%"].max())
@@ -384,8 +462,9 @@ catches **{best_r:.0%} of upcoming exits** — before the resignation letter arr
     ax.legend(fontsize=8.5); ax.grid(alpha=0.25)
     st.pyplot(fig)
 
-    st.caption("Healthy attrition models score 0.75–0.88 ROC-AUC. Anything above ~0.95 "
-               "almost always means notice-period leakage (see white paper, §6.2).")
+    st.caption(f"Validation split: {test_info['split']}. Healthy attrition models score "
+               "0.75–0.88 ROC-AUC — anything above ~0.95 almost always means "
+               "notice-period leakage (white paper §6.2).")
 
 # ---------------------------------------------------------------- TAB 3
 with tab3:

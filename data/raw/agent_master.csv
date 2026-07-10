@@ -1,0 +1,251 @@
+agent_id,date_of_joining,hiring_source,shift_type,queue_type,education,commute_minutes,supervisor_id,last_increment_date,compa_ratio
+Rahul Iyer #000,2025-01-28,Walk-in,Day Fixed,Voice-Support,Graduate,53,TL09,2025-06-14,1.01
+Tanvi Joshi #001,2024-06-21,Job Portal,Night Fixed,Chat,Graduate,33,TL02,2025-03-21,0.84
+Kavya Rao #002,2024-11-01,Referral,Day Fixed,Email,Graduate,22,TL02,2025-09-28,1.22
+Nikhil Sharma #003,2023-06-05,Job Portal,Night Fixed,Voice-Support,Graduate,54,TL14,2025-02-26,1.03
+Neha Iyer #004,2025-02-23,Job Portal,Rotational,Chat,Graduate,23,TL10,2024-09-19,0.84
+Amit Choudhary #005,2024-05-07,Job Portal,Rotational,Voice-Support,Undergraduate,70,TL07,2025-03-07,1.12
+Rohan Verma #006,2022-04-02,Job Portal,Day Fixed,Voice-Support,Graduate,81,TL11,2025-04-12,1.01
+Rohan Iyer #007,2024-07-19,Referral,Rotational,Voice-Support,Graduate,98,TL01,2025-04-20,1.03
+Tanvi Choudhary #008,2024-09-22,Job Portal,Rotational,Voice-Collections,Graduate,73,TL19,2025-09-03,1.08
+Isha Rao #009,2024-12-28,Walk-in,Rotational,Voice-Collections,Graduate,18,TL09,2024-10-11,0.92
+Meera Nair #010,2021-09-21,Job Portal,Day Fixed,Voice-Support,Undergraduate,92,TL09,2025-08-20,0.75
+Rahul Das #011,2024-05-02,Walk-in,Rotational,Voice-Collections,Graduate,62,TL02,2025-04-09,1.0
+Amit Bansal #012,2022-06-12,Job Portal,Day Fixed,Chat,Undergraduate,33,TL14,2025-07-02,1.04
+Isha Singh #013,2022-10-17,Job Portal,Night Fixed,Email,Postgraduate,75,TL13,2025-02-26,1.11
+Meera Iyer #014,2022-12-24,Referral,Night Fixed,Voice-Collections,Undergraduate,61,TL14,2025-01-10,0.94
+Karan Kapoor #015,2025-02-15,Walk-in,Split,Voice-Support,Graduate,50,TL07,2025-01-26,0.99
+Vikram Bansal #016,2025-01-20,Job Portal,Rotational,Email,Graduate,91,TL04,2025-01-01,1.05
+Neha Das #017,2023-10-08,Walk-in,Split,Voice-Support,Graduate,74,TL15,2025-03-14,0.98
+Deepak Jain #018,2024-11-13,Job Portal,Day Fixed,Voice-Support,Graduate,51,TL12,2025-05-10,0.99
+Sahil Das #019,2024-12-10,Job Portal,Rotational,Email,Graduate,92,TL10,2025-08-11,1.04
+Isha Pillai #020,2023-12-09,Job Portal,Rotational,Voice-Support,Undergraduate,52,TL09,2024-11-22,0.91
+Rahul Reddy #021,2024-07-04,Job Portal,Night Fixed,Voice-Support,Postgraduate,102,TL19,2025-03-13,1.17
+Karan Menon #022,2024-10-30,Job Portal,Rotational,Voice-Support,Graduate,18,TL04,2025-04-13,0.92
+Sahil Joshi #023,2024-10-23,Walk-in,Rotational,Voice-Support,Undergraduate,56,TL14,2025-08-06,1.02
+Isha Nair #024,2024-11-12,Referral,Night Fixed,Voice-Support,Postgraduate,90,TL01,2025-06-24,0.98
+Deepak Menon #025,2025-02-28,Referral,Rotational,Email,Undergraduate,67,TL06,2025-05-20,0.94
+Nikhil Reddy #026,2021-05-15,Job Portal,Day Fixed,Voice-Support,Graduate,57,TL20,2025-06-09,1.07
+Kavya Jain #027,2023-11-25,Walk-in,Night Fixed,Voice-Support,Graduate,62,TL04,2025-03-12,1.11
+Meera Desai #028,2025-01-02,Job Portal,Night Fixed,Voice-Support,Graduate,50,TL02,2025-08-01,1.16
+Isha Iyer #029,2024-12-07,Job Portal,Day Fixed,Email,Graduate,96,TL09,2025-08-13,1.07
+Tanvi Joshi #030,2024-02-18,Referral,Rotational,Voice-Support,Graduate,77,TL18,2025-04-27,0.97
+Ritika Singh #031,2024-07-01,Job Portal,Rotational,Voice-Support,Graduate,106,TL13,2024-10-30,1.1
+Aarav Verma #032,2025-03-04,Job Portal,Day Fixed,Chat,Undergraduate,96,TL08,2025-03-03,0.87
+Isha Desai #033,2025-03-27,Job Portal,Day Fixed,Email,Graduate,108,TL15,2024-12-28,1.02
+Karan Kumar #034,2024-08-11,Job Portal,Day Fixed,Voice-Collections,Graduate,97,TL02,2024-11-29,1.06
+Vikram Iyer #035,2023-03-19,Referral,Rotational,Chat,Graduate,57,TL20,2025-01-10,1.07
+Meera Bansal #036,2024-04-04,Walk-in,Day Fixed,Voice-Support,Undergraduate,47,TL20,2025-08-06,0.9
+Priya Reddy #037,2024-03-02,Referral,Day Fixed,Voice-Support,Undergraduate,39,TL02,2025-01-31,0.86
+Kavya Choudhary #038,2024-01-29,Referral,Night Fixed,Voice-Collections,Graduate,72,TL14,2025-03-04,1.18
+Isha Reddy #039,2024-05-09,Job Portal,Night Fixed,Voice-Support,Undergraduate,52,TL13,2025-02-14,0.96
+Manish Sharma #040,2024-07-13,Walk-in,Day Fixed,Voice-Support,Graduate,51,TL09,2024-11-26,0.85
+Ananya Reddy #041,2024-03-25,Referral,Split,Voice-Support,Graduate,82,TL11,2025-04-29,0.89
+Amit Gupta #042,2024-12-30,Referral,Day Fixed,Voice-Support,Postgraduate,94,TL17,2025-02-27,1.01
+Nikhil Joshi #043,2024-11-29,Walk-in,Rotational,Chat,Undergraduate,90,TL13,2025-09-22,1.13
+Karan Choudhary #044,2025-01-23,Job Portal,Day Fixed,Chat,Postgraduate,90,TL15,2025-05-18,1.01
+Manish Bansal #045,2025-03-08,Job Portal,Rotational,Voice-Support,Undergraduate,91,TL03,2025-10-09,1.13
+Nikhil Gupta #046,2022-11-10,Referral,Night Fixed,Voice-Support,Undergraduate,77,TL09,2025-08-22,1.03
+Meera Sharma #047,2024-09-03,Walk-in,Night Fixed,Chat,Graduate,25,TL16,2025-03-29,1.06
+Karan Mehta #048,2025-03-29,Referral,Night Fixed,Email,Undergraduate,93,TL15,2024-09-20,1.11
+Aarav Pillai #049,2024-10-20,Referral,Rotational,Voice-Collections,Graduate,91,TL06,2024-12-08,0.97
+Priya Joshi #050,2023-09-24,Job Portal,Rotational,Chat,Graduate,63,TL15,2024-10-31,1.04
+Sahil Bansal #051,2024-12-04,Walk-in,Rotational,Voice-Support,Undergraduate,45,TL17,2025-07-05,0.97
+Meera Verma #052,2024-12-05,Walk-in,Day Fixed,Chat,Graduate,69,TL04,2024-11-08,0.95
+Neha Sharma #053,2023-09-07,Job Portal,Day Fixed,Chat,Graduate,91,TL20,2025-05-29,1.07
+Ananya Jain #054,2025-02-14,Walk-in,Day Fixed,Voice-Support,Postgraduate,30,TL15,2025-01-21,0.93
+Priya Menon #055,2025-03-31,Walk-in,Night Fixed,Voice-Support,Undergraduate,40,TL13,2025-03-25,1.02
+Aarav Gupta #056,2022-05-06,Job Portal,Rotational,Voice-Support,Undergraduate,82,TL19,2025-07-12,0.93
+Deepak Gupta #057,2025-01-06,Referral,Night Fixed,Chat,Graduate,78,TL04,2025-01-11,1.0
+Karan Verma #058,2024-05-08,Job Portal,Night Fixed,Chat,Graduate,42,TL14,2024-11-21,0.96
+Tanvi Mehta #059,2024-04-15,Job Portal,Day Fixed,Voice-Support,Graduate,90,TL13,2025-01-07,1.12
+Neha Sharma #060,2025-01-06,Job Portal,Rotational,Voice-Collections,Postgraduate,68,TL16,2025-09-25,1.02
+Aarav Jain #061,2025-03-14,Job Portal,Day Fixed,Email,Graduate,47,TL06,2025-04-22,1.02
+Aarav Joshi #062,2025-03-02,Referral,Night Fixed,Voice-Support,Undergraduate,15,TL20,2025-01-06,1.17
+Amit Iyer #063,2021-05-24,Referral,Rotational,Voice-Support,Undergraduate,96,TL18,2024-11-11,0.75
+Manish Tiwari #064,2024-09-03,Referral,Rotational,Voice-Support,Graduate,52,TL16,2024-10-11,0.9
+Isha Mehta #065,2025-03-28,Job Portal,Day Fixed,Voice-Support,Graduate,62,TL09,2025-01-25,0.75
+Deepak Verma #066,2024-08-03,Job Portal,Night Fixed,Voice-Support,Graduate,73,TL10,2025-05-16,1.01
+Rahul Menon #067,2023-12-23,Walk-in,Split,Email,Graduate,100,TL16,2025-03-15,1.05
+Meera Desai #068,2024-06-10,Job Portal,Day Fixed,Voice-Support,Undergraduate,74,TL12,2025-08-03,1.07
+Nikhil Sharma #069,2023-10-25,Walk-in,Rotational,Voice-Support,Undergraduate,80,TL09,2025-10-15,1.03
+Amit Jain #070,2022-03-05,Job Portal,Night Fixed,Email,Undergraduate,68,TL16,2025-04-29,0.92
+Rohan Mehta #071,2023-10-27,Job Portal,Rotational,Voice-Support,Undergraduate,71,TL10,2025-01-29,1.18
+Ritika Verma #072,2024-12-13,Job Portal,Night Fixed,Voice-Support,Postgraduate,38,TL13,2025-07-27,1.04
+Ritika Sharma #073,2024-10-09,Referral,Day Fixed,Voice-Support,Graduate,66,TL02,2024-10-19,0.98
+Divya Singh #074,2025-04-01,Referral,Rotational,Voice-Support,Undergraduate,77,TL02,2025-07-13,0.89
+Deepak Tiwari #075,2024-05-09,Job Portal,Day Fixed,Voice-Support,Graduate,47,TL05,2025-08-31,1.05
+Ritika Joshi #076,2024-03-07,Referral,Rotational,Chat,Graduate,77,TL02,2025-07-20,0.95
+Sneha Desai #077,2024-01-01,Job Portal,Rotational,Chat,Undergraduate,78,TL05,2024-10-23,0.96
+Deepak Reddy #078,2025-03-16,Job Portal,Night Fixed,Chat,Postgraduate,71,TL06,2025-05-03,1.02
+Vikram Gupta #079,2023-08-10,Referral,Night Fixed,Chat,Postgraduate,87,TL13,2025-07-30,1.03
+Neha Singh #080,2023-11-03,Job Portal,Night Fixed,Chat,Graduate,50,TL17,2025-02-25,0.92
+Amit Pillai #081,2021-09-30,Job Portal,Split,Voice-Support,Graduate,50,TL06,2025-08-16,1.13
+Divya Choudhary #082,2024-10-03,Referral,Day Fixed,Chat,Graduate,29,TL05,2024-11-19,0.9
+Rohan Gupta #083,2024-03-19,Referral,Day Fixed,Voice-Collections,Graduate,82,TL08,2025-04-12,0.89
+Deepak Kumar #084,2022-08-18,Job Portal,Night Fixed,Voice-Support,Graduate,67,TL07,2025-04-24,1.03
+Tanvi Gupta #085,2024-11-13,Job Portal,Rotational,Voice-Support,Graduate,62,TL01,2025-07-25,1.02
+Isha Tiwari #086,2025-01-06,Job Portal,Rotational,Voice-Support,Graduate,19,TL17,2025-02-25,1.01
+Meera Sharma #087,2020-12-16,Referral,Night Fixed,Email,Undergraduate,71,TL15,2024-12-26,0.96
+Rahul Verma #088,2023-08-20,Job Portal,Day Fixed,Voice-Support,Graduate,102,TL03,2025-06-24,1.01
+Rohan Kumar #089,2024-01-23,Job Portal,Rotational,Voice-Support,Graduate,20,TL18,2024-10-29,0.95
+Isha Reddy #090,2024-03-29,Walk-in,Night Fixed,Chat,Graduate,48,TL06,2025-02-08,0.84
+Ananya Jain #091,2024-04-14,Referral,Day Fixed,Chat,Graduate,58,TL05,2025-03-20,1.08
+Karan Tiwari #092,2024-08-07,Referral,Rotational,Email,Graduate,41,TL06,2025-07-25,0.9
+Sneha Das #093,2025-03-24,Referral,Night Fixed,Chat,Postgraduate,29,TL02,2025-03-02,0.98
+Priya Bansal #094,2024-07-07,Referral,Night Fixed,Voice-Support,Graduate,57,TL01,2025-04-25,1.08
+Deepak Bansal #095,2023-10-23,Referral,Day Fixed,Voice-Collections,Graduate,109,TL08,2025-06-11,1.0
+Meera Kapoor #096,2022-06-21,Referral,Night Fixed,Voice-Collections,Undergraduate,24,TL15,2025-06-10,1.25
+Kavya Choudhary #097,2024-12-27,Referral,Day Fixed,Voice-Collections,Undergraduate,31,TL19,2025-10-03,0.86
+Neha Iyer #098,2024-12-31,Referral,Night Fixed,Email,Graduate,98,TL07,2025-03-18,0.93
+Kavya Rao #099,2024-02-19,Job Portal,Split,Voice-Support,Graduate,100,TL02,2025-04-29,1.01
+Ananya Iyer #100,2025-02-20,Job Portal,Night Fixed,Chat,Graduate,108,TL09,2024-09-21,1.14
+Ritika Kumar #101,2023-07-16,Job Portal,Day Fixed,Voice-Support,Undergraduate,24,TL07,2024-11-29,0.98
+Neha Kapoor #102,2025-02-14,Referral,Night Fixed,Voice-Support,Postgraduate,93,TL07,2024-12-22,0.86
+Ritika Desai #103,2024-07-12,Referral,Split,Email,Graduate,73,TL01,2024-12-07,1.12
+Ananya Kapoor #104,2022-06-27,Referral,Rotational,Voice-Support,Graduate,69,TL02,2025-04-08,0.91
+Rohan Sharma #105,2024-11-10,Referral,Rotational,Voice-Collections,Postgraduate,95,TL05,2024-12-02,0.98
+Priya Nair #106,2025-01-05,Job Portal,Rotational,Email,Graduate,104,TL17,2025-04-29,1.09
+Manish Mehta #107,2024-01-28,Walk-in,Rotational,Chat,Graduate,93,TL01,2025-08-09,0.93
+Rohan Pillai #108,2023-07-10,Job Portal,Rotational,Voice-Collections,Postgraduate,46,TL03,2024-10-13,0.96
+Rahul Iyer #109,2024-03-25,Referral,Night Fixed,Chat,Graduate,76,TL16,2024-12-20,1.05
+Isha Reddy #110,2025-03-19,Referral,Day Fixed,Email,Graduate,59,TL06,2025-03-31,0.98
+Meera Nair #111,2024-10-22,Referral,Rotational,Email,Postgraduate,60,TL01,2024-10-02,1.03
+Tanvi Verma #112,2025-03-26,Job Portal,Rotational,Voice-Support,Undergraduate,31,TL15,2024-11-10,0.91
+Manish Desai #113,2023-09-05,Job Portal,Split,Voice-Support,Postgraduate,58,TL04,2025-04-30,0.99
+Karan Rao #114,2025-03-12,Job Portal,Night Fixed,Voice-Support,Graduate,55,TL07,2025-02-20,0.89
+Vikram Mehta #115,2021-08-08,Referral,Rotational,Voice-Support,Graduate,16,TL02,2025-09-09,0.85
+Aarav Joshi #116,2024-06-23,Referral,Day Fixed,Chat,Graduate,103,TL11,2025-04-29,1.18
+Rohan Verma #117,2024-12-10,Job Portal,Split,Chat,Graduate,56,TL16,2025-07-12,1.05
+Vikram Rao #118,2023-07-17,Job Portal,Split,Voice-Support,Postgraduate,78,TL07,2025-01-30,1.09
+Divya Reddy #119,2024-04-06,Job Portal,Day Fixed,Voice-Support,Graduate,25,TL15,2025-02-11,0.9
+Aarav Sharma #120,2024-02-09,Walk-in,Night Fixed,Voice-Support,Graduate,66,TL12,2025-08-20,1.0
+Manish Iyer #121,2025-03-21,Referral,Split,Chat,Undergraduate,75,TL08,2025-05-17,0.98
+Sahil Menon #122,2024-04-18,Referral,Split,Chat,Graduate,65,TL07,2025-09-13,0.86
+Sneha Rao #123,2025-03-30,Job Portal,Rotational,Voice-Collections,Undergraduate,62,TL13,2024-12-23,1.06
+Ananya Gupta #124,2025-01-16,Job Portal,Day Fixed,Chat,Graduate,75,TL10,2024-10-29,0.93
+Neha Rao #125,2023-05-14,Walk-in,Day Fixed,Email,Undergraduate,94,TL15,2025-06-10,0.98
+Rahul Nair #126,2023-10-07,Walk-in,Day Fixed,Email,Graduate,72,TL01,2024-11-03,0.85
+Priya Iyer #127,2024-08-29,Job Portal,Split,Voice-Support,Undergraduate,15,TL08,2024-10-14,1.1
+Vikram Gupta #128,2025-01-28,Job Portal,Rotational,Chat,Postgraduate,57,TL01,2025-02-17,1.08
+Deepak Nair #129,2023-10-07,Job Portal,Night Fixed,Chat,Postgraduate,54,TL07,2025-06-14,1.04
+Rahul Choudhary #130,2025-03-13,Referral,Rotational,Email,Graduate,63,TL11,2025-02-05,0.91
+Kavya Iyer #131,2023-07-18,Job Portal,Split,Voice-Support,Postgraduate,82,TL13,2025-07-11,0.95
+Priya Verma #132,2023-11-15,Job Portal,Day Fixed,Voice-Support,Undergraduate,24,TL17,2025-03-15,1.12
+Deepak Menon #133,2024-12-05,Job Portal,Rotational,Voice-Collections,Graduate,92,TL05,2025-01-05,0.97
+Ritika Pillai #134,2023-10-27,Referral,Day Fixed,Voice-Support,Graduate,57,TL20,2025-04-14,1.03
+Amit Choudhary #135,2024-06-05,Referral,Night Fixed,Voice-Support,Graduate,64,TL09,2025-05-12,1.01
+Amit Tiwari #136,2023-07-13,Walk-in,Day Fixed,Chat,Graduate,79,TL17,2024-11-12,0.89
+Sahil Verma #137,2024-08-06,Job Portal,Day Fixed,Chat,Graduate,62,TL03,2025-05-07,1.15
+Nikhil Jain #138,2024-12-17,Job Portal,Rotational,Chat,Undergraduate,36,TL11,2024-11-20,0.8
+Isha Bansal #139,2021-11-22,Referral,Day Fixed,Chat,Graduate,55,TL20,2025-10-05,1.02
+Neha Iyer #140,2020-03-24,Job Portal,Night Fixed,Voice-Support,Graduate,41,TL13,2025-04-13,0.99
+Tanvi Joshi #141,2022-10-18,Referral,Day Fixed,Voice-Support,Postgraduate,26,TL08,2024-12-05,0.84
+Sahil Sharma #142,2024-12-19,Job Portal,Rotational,Voice-Support,Graduate,91,TL14,2024-10-01,1.03
+Karan Jain #143,2023-04-23,Job Portal,Day Fixed,Chat,Graduate,68,TL17,2024-12-08,1.05
+Manish Tiwari #144,2024-06-20,Job Portal,Day Fixed,Chat,Undergraduate,27,TL15,2025-01-19,1.01
+Kavya Jain #145,2024-09-14,Walk-in,Day Fixed,Chat,Undergraduate,41,TL11,2025-04-30,0.92
+Sahil Kapoor #146,2023-07-17,Referral,Rotational,Chat,Undergraduate,33,TL20,2025-06-05,1.05
+Ritika Singh #147,2024-12-15,Job Portal,Rotational,Chat,Undergraduate,62,TL19,2025-06-24,1.11
+Priya Kapoor #148,2025-01-22,Referral,Rotational,Email,Graduate,92,TL07,2025-03-09,1.02
+Divya Reddy #149,2024-11-15,Job Portal,Rotational,Chat,Undergraduate,75,TL10,2025-05-23,1.17
+Aarav Iyer #150,2024-03-26,Referral,Rotational,Email,Graduate,26,TL09,2025-04-22,1.09
+Aarav Nair #151,2024-01-11,Job Portal,Night Fixed,Email,Graduate,84,TL03,2025-01-10,1.08
+Sneha Joshi #152,2025-01-01,Job Portal,Night Fixed,Chat,Undergraduate,43,TL16,2024-12-10,1.14
+Kavya Singh #153,2023-12-26,Job Portal,Day Fixed,Chat,Graduate,84,TL04,2025-02-20,0.93
+Rohan Rao #154,2023-07-03,Job Portal,Rotational,Voice-Support,Graduate,101,TL05,2025-06-15,0.95
+Ritika Rao #155,2025-01-01,Job Portal,Night Fixed,Voice-Support,Graduate,63,TL14,2024-11-06,1.05
+Aarav Reddy #156,2024-05-15,Job Portal,Rotational,Email,Undergraduate,54,TL02,2025-05-25,1.05
+Tanvi Rao #157,2025-02-10,Job Portal,Day Fixed,Voice-Support,Graduate,109,TL15,2024-09-22,1.15
+Sneha Nair #158,2024-10-04,Referral,Night Fixed,Voice-Support,Postgraduate,92,TL18,2024-11-26,1.12
+Deepak Tiwari #159,2023-11-24,Referral,Day Fixed,Voice-Support,Undergraduate,86,TL13,2025-06-07,1.02
+Divya Singh #160,2021-01-20,Job Portal,Night Fixed,Chat,Undergraduate,87,TL01,2025-08-02,1.02
+Rahul Kapoor #161,2023-10-10,Walk-in,Rotational,Voice-Support,Graduate,69,TL14,2025-07-16,0.97
+Manish Kumar #162,2024-11-18,Job Portal,Night Fixed,Chat,Graduate,16,TL18,2025-06-13,0.96
+Ritika Menon #163,2024-02-05,Walk-in,Rotational,Voice-Support,Graduate,71,TL19,2024-12-24,0.96
+Rohan Bansal #164,2024-10-02,Walk-in,Day Fixed,Chat,Postgraduate,35,TL19,2025-10-13,1.09
+Tanvi Das #165,2025-02-06,Referral,Night Fixed,Email,Graduate,104,TL01,2025-05-11,0.95
+Amit Singh #166,2023-06-02,Referral,Night Fixed,Chat,Postgraduate,101,TL04,2025-09-12,0.97
+Karan Pillai #167,2023-03-06,Job Portal,Night Fixed,Voice-Support,Graduate,97,TL12,2025-09-22,1.02
+Ananya Verma #168,2024-01-05,Job Portal,Day Fixed,Chat,Undergraduate,45,TL16,2024-12-18,0.95
+Manish Gupta #169,2024-11-18,Walk-in,Rotational,Email,Graduate,96,TL12,2025-10-05,0.98
+Priya Das #170,2024-07-01,Job Portal,Rotational,Chat,Undergraduate,53,TL06,2024-10-16,0.78
+Nikhil Sharma #171,2023-12-11,Job Portal,Rotational,Voice-Support,Graduate,66,TL04,2025-05-25,1.04
+Neha Mehta #172,2024-08-25,Job Portal,Day Fixed,Voice-Support,Postgraduate,103,TL06,2024-12-25,0.97
+Kavya Kapoor #173,2024-01-26,Referral,Night Fixed,Email,Undergraduate,65,TL17,2024-10-21,1.02
+Sahil Kapoor #174,2023-08-22,Walk-in,Night Fixed,Chat,Undergraduate,25,TL20,2025-04-28,1.04
+Sneha Rao #175,2024-09-03,Job Portal,Rotational,Voice-Support,Undergraduate,84,TL17,2024-12-08,0.82
+Manish Choudhary #176,2023-12-30,Referral,Day Fixed,Voice-Collections,Graduate,107,TL18,2025-07-24,1.24
+Ritika Kapoor #177,2024-12-10,Referral,Rotational,Voice-Collections,Undergraduate,40,TL12,2025-03-17,1.02
+Priya Singh #178,2024-03-17,Job Portal,Night Fixed,Voice-Support,Postgraduate,76,TL16,2024-12-30,1.02
+Divya Rao #179,2024-06-26,Job Portal,Split,Email,Graduate,66,TL18,2024-09-18,0.83
+Meera Gupta #180,2022-12-02,Referral,Day Fixed,Voice-Support,Postgraduate,74,TL09,2025-06-16,1.07
+Neha Tiwari #181,2024-12-03,Job Portal,Night Fixed,Voice-Support,Graduate,90,TL15,2025-05-25,1.05
+Ananya Nair #182,2024-12-29,Referral,Night Fixed,Voice-Support,Graduate,15,TL20,2025-08-01,0.97
+Ananya Mehta #183,2024-04-16,Job Portal,Rotational,Voice-Support,Graduate,99,TL01,2025-02-14,1.03
+Ritika Desai #184,2024-08-12,Referral,Rotational,Email,Graduate,74,TL12,2025-09-13,1.14
+Rahul Bansal #185,2023-04-25,Referral,Day Fixed,Chat,Graduate,45,TL02,2024-09-23,0.98
+Ritika Tiwari #186,2024-03-26,Referral,Night Fixed,Voice-Support,Graduate,93,TL20,2025-09-15,0.92
+Nikhil Menon #187,2024-09-14,Job Portal,Rotational,Voice-Support,Graduate,74,TL09,2025-07-15,1.15
+Rahul Kapoor #188,2021-04-22,Job Portal,Night Fixed,Voice-Support,Graduate,52,TL15,2024-10-24,1.04
+Ananya Kumar #189,2024-09-08,Job Portal,Day Fixed,Chat,Undergraduate,95,TL19,2025-10-12,1.0
+Isha Menon #190,2024-03-26,Walk-in,Split,Email,Undergraduate,21,TL01,2024-10-19,1.24
+Sneha Verma #191,2023-09-23,Job Portal,Rotational,Voice-Support,Postgraduate,55,TL12,2025-07-10,1.03
+Sneha Menon #192,2023-11-29,Job Portal,Night Fixed,Voice-Collections,Graduate,27,TL16,2024-12-20,1.0
+Meera Jain #193,2023-03-21,Job Portal,Night Fixed,Voice-Support,Undergraduate,88,TL18,2025-06-16,1.04
+Vikram Tiwari #194,2024-08-06,Job Portal,Split,Voice-Support,Graduate,22,TL17,2025-08-13,0.97
+Manish Jain #195,2024-01-06,Job Portal,Day Fixed,Chat,Graduate,29,TL20,2024-10-31,1.04
+Neha Joshi #196,2025-03-19,Job Portal,Split,Email,Postgraduate,54,TL18,2025-01-21,1.03
+Amit Desai #197,2023-10-02,Walk-in,Rotational,Voice-Support,Graduate,99,TL10,2025-09-06,0.95
+Rohan Iyer #198,2024-10-17,Job Portal,Rotational,Voice-Collections,Postgraduate,92,TL13,2025-03-23,0.99
+Rohan Desai #199,2020-06-16,Job Portal,Rotational,Voice-Support,Graduate,103,TL05,2024-11-14,1.05
+Sahil Nair #200,2025-02-28,Referral,Rotational,Voice-Support,Postgraduate,20,TL01,2024-10-18,1.05
+Meera Verma #201,2022-05-02,Walk-in,Night Fixed,Chat,Postgraduate,93,TL02,2024-11-02,1.07
+Nikhil Rao #202,2021-02-08,Job Portal,Rotational,Voice-Support,Graduate,53,TL18,2024-10-26,1.09
+Aarav Joshi #203,2024-09-14,Job Portal,Day Fixed,Chat,Graduate,81,TL20,2025-02-03,1.04
+Divya Kumar #204,2024-12-31,Referral,Rotational,Chat,Graduate,53,TL09,2025-07-20,1.07
+Sneha Desai #205,2024-12-04,Job Portal,Rotational,Voice-Support,Undergraduate,96,TL05,2025-03-14,0.98
+Sahil Iyer #206,2025-02-18,Walk-in,Night Fixed,Voice-Collections,Graduate,52,TL04,2024-10-23,0.99
+Tanvi Rao #207,2025-01-02,Referral,Rotational,Voice-Support,Undergraduate,42,TL20,2025-02-02,1.12
+Ananya Kumar #208,2024-12-13,Job Portal,Night Fixed,Chat,Graduate,65,TL05,2025-03-26,0.82
+Sneha Das #209,2025-03-22,Job Portal,Rotational,Voice-Support,Graduate,16,TL07,2025-03-12,1.05
+Rahul Joshi #210,2023-05-31,Referral,Rotational,Chat,Graduate,65,TL05,2025-05-27,1.25
+Rahul Iyer #211,2024-08-16,Job Portal,Day Fixed,Chat,Postgraduate,68,TL15,2025-06-12,0.83
+Meera Das #212,2024-08-23,Referral,Rotational,Voice-Collections,Undergraduate,34,TL17,2025-07-09,1.16
+Sneha Desai #213,2024-07-03,Job Portal,Day Fixed,Voice-Support,Postgraduate,27,TL17,2025-04-15,0.84
+Karan Mehta #214,2022-05-29,Job Portal,Day Fixed,Chat,Graduate,90,TL02,2024-09-25,1.05
+Meera Sharma #215,2023-07-31,Referral,Day Fixed,Voice-Support,Graduate,95,TL20,2025-07-17,1.17
+Deepak Verma #216,2024-09-25,Job Portal,Night Fixed,Chat,Graduate,64,TL19,2025-07-23,1.16
+Sahil Joshi #217,2024-06-23,Job Portal,Night Fixed,Voice-Collections,Graduate,27,TL12,2025-07-01,0.92
+Rahul Pillai #218,2024-12-18,Referral,Night Fixed,Voice-Support,Graduate,48,TL01,2025-03-08,0.88
+Amit Sharma #219,2025-01-29,Job Portal,Day Fixed,Chat,Undergraduate,101,TL15,2025-09-02,0.86
+Nikhil Pillai #220,2024-12-15,Job Portal,Rotational,Voice-Support,Graduate,106,TL15,2024-10-22,1.08
+Ananya Das #221,2023-09-27,Job Portal,Night Fixed,Chat,Graduate,31,TL02,2025-07-06,0.97
+Deepak Iyer #222,2024-08-14,Referral,Rotational,Voice-Support,Graduate,82,TL05,2025-05-09,1.01
+Tanvi Kumar #223,2025-01-29,Walk-in,Day Fixed,Chat,Undergraduate,102,TL04,2025-06-20,1.03
+Priya Reddy #224,2024-12-03,Job Portal,Rotational,Chat,Undergraduate,30,TL11,2024-10-10,1.05
+Meera Tiwari #225,2024-08-01,Job Portal,Night Fixed,Email,Graduate,80,TL06,2025-10-05,1.06
+Meera Das #226,2024-02-25,Job Portal,Rotational,Voice-Support,Graduate,107,TL04,2024-09-26,1.02
+Rahul Singh #227,2025-03-23,Job Portal,Rotational,Voice-Support,Graduate,24,TL05,2024-11-23,0.84
+Sneha Singh #228,2025-03-28,Job Portal,Rotational,Email,Graduate,69,TL18,2025-04-07,1.15
+Priya Desai #229,2025-03-06,Referral,Day Fixed,Voice-Collections,Graduate,42,TL19,2025-04-30,0.75
+Priya Kapoor #230,2024-06-29,Referral,Rotational,Voice-Support,Undergraduate,47,TL04,2024-11-24,1.13
+Nikhil Kumar #231,2025-01-09,Referral,Night Fixed,Chat,Graduate,44,TL20,2025-01-06,0.94
+Manish Kumar #232,2022-11-26,Referral,Rotational,Voice-Support,Graduate,37,TL10,2025-09-14,0.98
+Rohan Tiwari #233,2023-08-22,Referral,Rotational,Email,Graduate,30,TL04,2025-01-20,0.95
+Neha Pillai #234,2024-12-28,Job Portal,Day Fixed,Chat,Graduate,21,TL13,2025-03-11,0.97
+Sahil Verma #235,2021-03-11,Job Portal,Day Fixed,Chat,Graduate,71,TL04,2024-10-28,1.0
+Deepak Mehta #236,2025-01-06,Job Portal,Rotational,Voice-Support,Graduate,38,TL10,2025-04-28,0.98
+Vikram Nair #237,2024-07-02,Job Portal,Split,Chat,Postgraduate,74,TL07,2025-06-20,0.89
+Sahil Das #238,2023-05-09,Referral,Split,Email,Postgraduate,42,TL05,2025-07-06,1.09
+Tanvi Verma #239,2024-05-20,Job Portal,Night Fixed,Chat,Undergraduate,57,TL06,2024-12-16,0.95
+Nikhil Verma #240,2025-01-22,Referral,Rotational,Email,Graduate,47,TL06,2025-02-08,1.14
+Vikram Reddy #241,2025-02-02,Job Portal,Day Fixed,Voice-Support,Graduate,27,TL04,2025-06-01,0.99
+Sahil Nair #242,2025-03-04,Referral,Day Fixed,Chat,Undergraduate,108,TL19,2025-10-07,0.93
+Tanvi Tiwari #243,2024-09-08,Referral,Rotational,Email,Graduate,75,TL17,2025-07-17,1.05
+Ritika Rao #244,2023-11-01,Referral,Night Fixed,Voice-Collections,Graduate,71,TL03,2024-12-10,1.09
+Meera Sharma #245,2021-01-31,Job Portal,Rotational,Voice-Support,Graduate,43,TL04,2024-10-10,0.91
+Ritika Sharma #246,2024-01-07,Job Portal,Day Fixed,Voice-Collections,Undergraduate,33,TL01,2025-01-23,0.98
+Manish Joshi #247,2024-05-28,Referral,Night Fixed,Voice-Support,Undergraduate,20,TL14,2025-04-12,1.15
+Isha Desai #248,2020-06-22,Job Portal,Split,Voice-Support,Graduate,50,TL19,2024-12-31,0.9
+Priya Choudhary #249,2024-05-06,Referral,Night Fixed,Email,Postgraduate,89,TL17,2025-07-25,0.92
